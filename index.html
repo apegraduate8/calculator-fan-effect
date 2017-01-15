@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<style type="text/css">
+
+
+		body {
+			height: 600px;
+			margin-top: 100px;
+			margin-left: 200px;
+			position: relative;
+		}
+
+		img {
+			position: fixed;
+			left: -50px;
+			top: 20px;
+			transform: rotate(50deg);
+
+		}
+		#fan {
+			animation: shake 50ms infinite;
+		}
+		@keyframes shake {
+			0%{top:19px;}
+			100%{top:21px;}
+		}
+		@keyframes wind {
+			0%{left:132px;}
+			100%{left:129px;}
+		}
+		@keyframes buttonShake {
+			0%{transform: rotate(41deg);}
+			50%{transform: rotate(43deg);}
+			100%{transform: rotate(38deg);}
+		} 	
+		@keyframes buttonShakeTwo {
+			0%{transform: rotate(7deg);}
+			50%{transform: rotate(9deg);}
+			100%{transform: rotate(3deg);}
+		} 	
+
+		#windy {
+			z-index: -2;
+			position: fixed;
+			left: 130px;
+			top: -35px;
+			transform: rotate(20deg);
+			animation: wind 2s infinite;
+
+		}
+
+		table, td {
+			border: 2px solid black;
+
+		}
+		td, th {
+			font-size: 1.7em;
+			box-shadow: 5px 5px 5px #888;
+		}
+		td#one {
+			position: absolute;
+			top: 20px;
+			left: 400px;
+			width: 75px;
+			height: 45px;
+			transform: rotate(10deg);
+
+
+		}
+		td#two {
+			position: absolute;
+			top: 100px;
+			left: 600px;
+			width: 75px;
+			height: 45px;
+			transform: rotate(-10deg);
+
+
+		}
+		td#three {
+			position: absolute;
+			top: 60px;
+			left: 475px;
+			width: 75px;
+			height: 45px;
+
+		}
+		td#four {
+			position: absolute;
+			top: 200px;
+			left: 350px;
+			width: 75px;
+			height: 45px;
+			transform: rotate(6deg);
+
+
+
+		}
+		td#five {
+			position: absolute;
+			top: 150px;
+			left: 700px;
+			width: 75px;
+			height: 45px;
+
+		}
+		td#six {
+			position: absolute;
+			top: 100px;
+			left: 250px;
+			width: 75px;
+			height: 45px;
+
+		}
+		td#seven {
+			position: absolute;
+			top: 410px;
+			left: 920px;
+			width: 75px;
+			height: 45px;
+
+		}
+		td#eight {
+			position: absolute;
+			top: 20px;
+			left: 200px;
+			width: 75px;
+			height: 45px;
+
+		}
+
+		.table2 {
+			border: 1px solid transparent;
+		}
+
+		td#seven1 {
+			position: absolute;
+			top: 380px;
+			left: 850px;
+			opacity: .8;
+			border-top: 0;
+			border-right: 0;
+
+		}
+		td#eight2 {
+			position: absolute;
+			top: 30px;
+			left: 180px;
+			opacity: .8;
+
+		}
+		td#nine3 {
+			position: absolute;
+			top: 400px;
+			left: 900px;
+			opacity: .6;
+			border-top: 0;
+			border-left: 0;
+
+		}
+		td#seven4 {
+			position: absolute;
+			top: 50px;
+			left: 320px;
+
+		}
+		td#eight5 {
+			position: absolute;
+			top: 460px;
+			left: 720px;
+			opacity: .6;
+			border-top: 0;
+			border-left: 0;
+
+		}
+		td#nine6 {
+			position: absolute;
+			top: 300px;
+			left: 280px;
+			opacity: .6;
+			border-top: 0;
+			border-left: 0;
+
+		}
+
+		td#divide {
+			position: absolute;
+			top: 120px;
+			left: 130px;
+			width: 75px;
+			height: 45px;
+			transform: rotate(5deg);
+			animation: buttonShakeTwo 400ms infinite;
+
+
+		}
+		td#equal {
+			position: relative;
+			top: 85px;
+			left: 20px;
+			transform: rotate(40deg);
+			animation: buttonShake 500ms infinite;
+
+		}
+
+		td:hover {
+			box-shadow: 1px 1px 1px #888;
+			
+		}
+		td:hover th {
+			background-color: red;
+		}
+		span {
+			float: right;
+		}
+
+
+	</style>
+</head>
+<body>
+
+<form name="calc">
+<table width="300px" height="300px">
+	<tr>
+		<th colspan="4">
+			<input id="a" type="text" name="input" value=" " style="width:90%;height:70%;">
+		</th>
+	</tr>
+
+	<tr>
+		<td id="seven" onclick="call('#seven'), calc.input.value+='7'" value="7">7</td>
+		<td id="eight" onclick="call('#eight'), calc.input.value+='8'" value="8">8</td>
+		<td id="nine" onclick="call('#nine'), calc.input.value+='9'" value="9">9</td>
+		<td onclick="calc.input.value+='*'" value="x">x</td>
+		<td id="divide" onclick="calc.input.value+='/'" value="/">/</td>
+	</tr>
+
+	<tr>
+		<td id="four" onclick="call('#four'), calc.input.value+='4'" value="4">4</td>
+		<td id="five" onclick="call('#five'), calc.input.value+='5'" value="5">5</td>
+		<td id="six" onclick="call('#six'), calc.input.value+='6'" value="6">6</td>
+		<td onclick="calc.input.value+='-'" value="-">-</td>
+	</tr>
+	<tr>
+		<td id="one" onclick="call('#one'), calc.input.value+='1'" value="1"> 1</td>
+		<td id="two" onclick="call('#two'), calc.input.value+='2'" value="2">
+		2</td>
+		<td id="three" onclick="call('#three'), calc.input.value+='3'" value="3">3</td>
+		<td onclick="calc.input.value+='+'" value="+">+</td>
+	</tr>
+	<tr>
+		<td colspan="2">0</td>
+		<td>.</td>
+
+
+		<td id="equal" onclick="calc.input.value = eval(calc.input.value)" value="=">=</td>
+	</tr>
+</table>
+
+<table class="table2">
+	<tr>
+		
+		
+	</tr>
+	<tr>
+		<td id="seven1">1</td>
+		<td id="eight2">2</td>
+		<td id="nine3">3</td>
+		<td  type="reset" onclick="(calc.input.value = ' '), bodega=[]"  value="reset">RES</td>
+		
+	</tr>
+	<tr>
+		<td id="seven4">4</td>
+		<td id="eight5">5</td>
+		<td id="nine6">6</td>
+		<td id="equal" onclick="calc.input.value = ave()" value="avg">AVG</td>
+		 
+		
+	</tr>
+</table>
+ </form>
+
+
+	<img id="fan" src="fan-img.jpg">
+	<img id="windy" src="windy.jpeg" width="150px" height="150px">
+	<h2 style="margin-top: 110px;">**must always reset after you find the average!</h2>
+<script type="text/javascript">
+	
+
+        
+          
+        var a;
+        var store;
+        var bodega=[];
+        var sum;
+        var average;
+        var y = 0;
+
+   function call(a){
+        a = document.querySelector(a);
+        store = a.getAttribute('value');
+        bodega.push(store);
+        if(bodega.length === 0){bodega.push(calc.input.value)}
+        console.log(store);
+        console.log(bodega);
+        average = 0;
+        sum = 0;
+        
+    }
+        
+        
+        
+        function ave()
+        {
+      		if(bodega.length < 3){calc.input.value = "average needs more than 3 numbers"}	
+            for(var i = 0;i<bodega.length;i++) {
+               y = parseInt(bodega[i]);
+                sum = sum + y;
+                
+                }
+           average = sum/bodega.length;
+            bodega = [];
+            return average;
+        }
+
+</script>
+
+
+</body>
+
+
+</html>

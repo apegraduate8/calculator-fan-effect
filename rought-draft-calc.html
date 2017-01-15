@@ -1,0 +1,68 @@
+<form name="calc">
+            <input id="one" type="button"  onclick="call('#one'), calc.input.value+='1'" value="1"/>
+            <input id="two" type="button" onclick="call('#two'), calc.input.value+='2'" value="2"/>
+            <input id="three" type="button" onclick="call('#three'), calc.input.value+='3'" value="3"/>
+            <input id="four" type="button" onclick="call('#four'), calc.input.value+='4'" value="4"/>
+            <input id="plus" type="button" name="plus" onclick="calc.input.value+='+'" value="+"/>
+            <br>
+            <input id="five" type="button" onclick="call('#five'), calc.input.value+='5'" value="5"/>
+            <input id="six" type="button" onclick="call('#six'), calc.input.value+='6'" value="6"/>
+            <input id="seven" type="button" onclick="call('#seven'), calc.input.value+='7'" value="6"/>
+            <input id="eight" type="button" onclick="call('#eight'), calc.input.value+='8'" value="8"/>
+            <input type="button" onclick="calc.input.value+='-'" value="-"/>
+
+
+
+           <input type="button" onclick="console.log(calc.input.value),calc.input.value = eval(calc.input.value)" value="="/>
+              <input type="reset"  value="reset"/>
+              
+                <br>
+                <input type="button" onclick="calc.input.value = ave()" value="avg"/>
+                <br>
+            
+            <input id="a" type="text" name="input" value=" ">
+
+       </form>
+        
+        
+        
+        
+    </div>
+    
+    
+    <script type="text/javascript">
+        
+          
+        var a;
+        var store;
+        var bodega=[];
+        var sum;
+        var average;
+        var y = 0;
+
+   function call(a){
+        a = document.querySelector(a);
+        store = a.getAttribute('value');
+        bodega.push(store);
+        if(bodega.length > 3){bodega = []}
+        console.log(store);
+        console.log(bodega);
+        average = 0;
+        sum = 0;
+        
+    }
+        
+        
+        
+        function ave()
+        {
+      
+            for(var i = 0;i<bodega.length;i++) {
+               y = parseInt(bodega[i]);
+                sum = sum + y;
+                
+                }
+           average = sum/bodega.length;
+            bodega = [];
+            return average;
+        }
